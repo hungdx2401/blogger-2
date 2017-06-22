@@ -1,8 +1,8 @@
-<!-- Indices written at Fri, 23 Jun 2017 02:32:29 ICT -->
+<!-- Indices written at Fri, 23 Jun 2017 02:40:50 ICT -->
 
 <datastore-indexes>
 
-    <!-- Used 3 times in query history -->
+    <!-- Used 6 times in query history -->
     <datastore-index kind="Article" ancestor="false" source="auto">
         <property name="status" direction="asc"/>
         <property name="doc" direction="desc"/>
