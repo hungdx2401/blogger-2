@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+	<!--Start Of Client Servlet -->
+	<servlet>
+		<servlet-name>ArticleController</servlet-name>
+		<servlet-class>katy.bordercollie.controller.ArticleController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ArticleController</servlet-name>
+		<url-pattern>/articles/*</url-pattern>
+		<url-pattern>/articles</url-pattern>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+		<servlet-name>AboutUs</servlet-name>
+		<jsp-file>/about-us.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutUs</servlet-name>
+		<url-pattern>/about-us/*</url-pattern>
+		<url-pattern>/about-us</url-pattern>		
+	</servlet-mapping>		
+	<servlet>
+		<servlet-name>RssController</servlet-name>
+		<jsp-file>/rss.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RssController</servlet-name>
+		<url-pattern>/rss/*</url-pattern>
+		<url-pattern>/rss</url-pattern>		
+	</servlet-mapping>		
+	<servlet>
+		<servlet-name>SitemapController</servlet-name>
+		<jsp-file>/site_map.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SitemapController</servlet-name>
+		<url-pattern>/sitemap.xml</url-pattern>
+		<url-pattern>/sitemap</url-pattern>	
+		<url-pattern>/site-map.xml</url-pattern>
+		<url-pattern>/site_map.xml</url-pattern>	
+	</servlet-mapping>		
+	<!--End Of Client Servlet -->
+
+
+
+	<!-- Start Of Server Endpoint -->
+	<servlet>
+		<servlet-name>ArticleEndpoint</servlet-name>
+		<servlet-class>katy.bordercollie.admin.ArticleEndpoint</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ArticleEndpoint</servlet-name>
+		<url-pattern>/_admin/articles</url-pattern>
+		<url-pattern>/_admin/articles/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CategoryEndpoint</servlet-name>
+		<servlet-class>katy.bordercollie.admin.CategoryEndpoint</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CategoryEndpoint</servlet-name>
+		<url-pattern>/_admin/categories</url-pattern>
+		<url-pattern>/_admin/categories/*</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>GetUploadUrlServlet</servlet-name>
+		<servlet-class>katy.bordercollie.blobstore.GetUploadUrlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetUploadUrlServlet</servlet-name>
+		<url-pattern>/_blobstore/get-upload-url</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>katy.bordercollie.blobstore.UploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>/_blobstore/upload</url-pattern>
+	</servlet-mapping>
+	<!-- End Of Server Endpoint -->
+
+	<servlet>
+		<servlet-name>Admin Home</servlet-name>
+		<jsp-file>/admin/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Admin Home</servlet-name>
+		<url-pattern>/_admin</url-pattern>
+		<url-pattern>/_admin/</url-pattern>
+	</servlet-mapping>
+
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>/_admin</url-pattern>
+			<url-pattern>/_admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<filter>
+		<filter-name>ObjectifyFilter</filter-name>
+		<filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ObjectifyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>GeneralFilter</filter-name>
+		<filter-class>katy.bordercollie.filter.GeneralFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>GeneralFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>
+			ArticleController
+		</welcome-file>
+	</welcome-file-list>
+</web-app>
