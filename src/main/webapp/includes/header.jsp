@@ -61,13 +61,13 @@
 				</div>
 				<div class="menu">
 					<ul>
-						<li class="current_page_item"><a href="/" title="Home Page">Trang chủ</a></li>						
+						<li><a href="/" title="Home Page">Trang Chủ</a></li>
 						<li class="page_item page-item-1"><a href="/rss" title="Stay updated via RSS">Rss</a>
 						</li>
 						<li class="page_item page-item-126"><a href="/sitemap.xml" title="Site map">Site Map</a></li>
-						<li class="page_item page-item-25"><a href="/about-us" title="About us">Giới thiệu</a></li>						
+						<li class="page_item page-item-25"><a href="/about-us" title="About us">Giới hiệu</a></li>
 					</ul>
 				</div>
 			</nav>
 			<!-- #site-navigation -->
-		</header>
+		</header>T

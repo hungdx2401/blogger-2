@@ -34,7 +34,7 @@
 						<div class="entry-meta">
 							<a class="date-wrap" href="/articles?time=<%=article.getDoc()%>" title="Date <%=article.getDoc()%>" rel="bookmark">
                                 <time class="entry-date" datetime="<%=article.getDoc()%>">
-                                	Ngày <%=cal.get(Calendar.DATE)%> tháng <%=cal.get(Calendar.MONTH)%>, <%=cal.get(Calendar.YEAR)%>
+                                	Ngày <%=cal.get(Calendar.DATE)%> tháng <%=cal.get(Calendar.MONTH) + 1%>, <%=cal.get(Calendar.YEAR)%>
 								</time>
                             </a>							
 						</div>
