@@ -35,7 +35,7 @@
 			<%
 				for (Entry<String, Category> entry : StaticItem.mapCategory.entrySet()) {
 			%>
-			<li><a href="#2011/07/07/pellentesque-habitant-posuere/"><%=entry.getValue().getTitle()%></a></li>
+			<li><a href="/articles?category=<%=entry.getValue().getId()%>"><%=entry.getValue().getTitle()%></a></li>
 			<%
 				}
 			%>

@@ -6,13 +6,13 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:include page="/includes/header.jsp" />
 <%
 	List<Article> listArticle = (List<Article>) request.getAttribute(ArticleController.ATTRIBUTE_LIST_ARTICLE);
 	boolean hasNextPage = (Boolean) request.getAttribute(ArticleController.ATTRIBUTE_HAS_NEXT);
 	int currentPage = (Integer) request.getAttribute(ArticleController.ATTRIBUTE_PAGE);
 	String url = (String) request.getAttribute(ArticleController.ATTRIBUTE_URL);
 %>
+<jsp:include page="/includes/header.jsp" />
 <body>
 	<div id="main" class="site-main">
 		<div id="primary" class="content-area">
@@ -25,8 +25,8 @@
 						for (Article article : listArticle) {
 							cal.setTimeInMillis(article.getDoc());
 				%>
-				<article id="post-116"
-					class="post-116 post type-post status-publish format-standard sticky hentry category-books category-writing tag-announcement tag-panache">
+				<article id="post-<%=article.getId()%>"
+					class="post-<%=article.getId()%> post type-post status-publish format-standard sticky hentry category-books category-writing tag-announcement tag-panache">
 					<header class="entry-header">
 						<h1 class="entry-title">
 							<a href="/articles?id=<%=article.getId()%>" rel="bookmark"><%=article.getTitle()%></a>
