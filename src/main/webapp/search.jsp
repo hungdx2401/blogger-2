@@ -23,7 +23,7 @@
 		<div id="content" class="site-content" role="main">
 			<header class="page-header">
 				<h1 class="page-title">
-					Các bài viết trong danh mục: <span><%=title %></span>
+					<span><%=title %></span>
 				</h1>
 			</header>
 			<%
