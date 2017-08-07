@@ -78,7 +78,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="/" title="Home Page">Trang Chủ</a></li>
+                    <li><a href="/" title="Home Page">Trang chủ</a></li>
                     <li class="page_item page-item-1"><a href="/rss" title="Stay updated via RSS">Rss</a>
                     </li>
                     <li class="page_item page-item-126"><a href="/sitemap.xml" title="Site map">Site Map</a></li>
